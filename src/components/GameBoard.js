@@ -194,9 +194,9 @@ const GameBoard = ({
 
 	return (
 		<div>
-			<p>Game Mode: {categoryChosen}</p>
+			<p className="game-mode-text"> {categoryChosen.toUpperCase()}</p>
 			<p className={numberOfLivesLeft <= 3 ? 'lives-left-text red-text' : 'lives-left-text'}>
-				Lives Left: {numberOfLivesLeft}
+				Lives Remaining:  {numberOfLivesLeft}
 			</p>
 			<img
 				className="hangman-image"
@@ -204,7 +204,7 @@ const GameBoard = ({
 				alt={numberOfLivesLeft}
 			/>
 			<br />
-			<div className="wrong-guesses">{displayWrongGuesses()}</div>
+			{ numberOfLivesLeft < 7 && <div className="wrong-guesses-text">Wrong Guesses: {displayWrongGuesses()}</div>}
 			<div className="hint-text">{hint && displayHint()}</div>
 			{/* {hint && <button onClick={() => displayHint()}>Hint</button>} */}
 			<div className="x">
@@ -212,7 +212,7 @@ const GameBoard = ({
 			</div>
 			{!answer.includes('_') && (
 				<div>
-					<p>Congratulations! You have won this game!</p>
+					<p className="result-text">Congratulations! You won!</p>
 					<button className="game-button" onClick={() => handleNewGame()}>
 						New Game
 					</button>
@@ -229,8 +229,8 @@ const GameBoard = ({
 			)}
 			{numberOfLivesLeft === 0 && (
 				<div>
-					<p className="wrong-answer-message">
-						Sorry you were unsuccessful this time! The answer was <b>{wordToGuess}!</b>
+					<p className="result-text">
+						Game Over! The answer was <b>{wordToGuess.toUpperCase()}!</b>
 					</p>
 					<button className="game-button" onClick={() => handleNewGame()}>
 						New Game

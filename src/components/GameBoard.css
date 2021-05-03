@@ -1,28 +1,83 @@
-.wrong-guesses {
-	margin: 10px 10px 0px 10px;
+
+.game-mode-text {
+	font-family: 'Londrina Solid', cursive;
+	font-size: 20px;
+	margin: 0;
 }
-.wrong-answer-message {
-	margin: 20px 10px;
+.lives-left-text {
+	font-family: 'Londrina Solid', cursive;
+	font-size: 20px;
+	margin: 0 0 20px 0;
+}
+
+.wrong-guesses-text {
+	margin: 5px;
+	font-family: 'Londrina Solid', cursive;
+	font-size: 18px;
+}
+.result-text {
+	margin: 5px 0px 15px 0px;
+	font-family: 'Cabin', sans-serif;
+	font-size: 18px;
 }
 
 .game-button {
 	width: auto;
 	padding: 5px 10px;
-	margin: 0 5px;
+	margin: 5px;
+
+    cursor: pointer;
+
+    background-color: transparent;
+    border: solid 2px black;
+    border-radius: 5px;
+
+    font-family: 'New Tegomin', serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.game-button:hover {
+    background-color: #d6d6d6;
+}
+
+.game-button:active {
+	transform: translateY(2px);
 }
 
 .modal-close-button {
 	width: auto;
 	padding: 5px 10px;
-	margin-bottom: 10px;
+	margin: 0 5px;
+
+    cursor: pointer;
+
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 5px;
+
+    font-family: 'New Tegomin', serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-close-button:hover {
+    background-color: #d6d6d6;
+}
+
+.modal-close-button:active {
+	transform: translateY(2px);
 }
 
 .hint-text {
-	margin: 5px 10px;
+	margin: 5px;
+	font-family: 'Londrina Solid', cursive;
+	font-size: 18px;
 }
 
 .answer-text {
-	margin: 20px 10px;
+	font-family: 'Cabin', sans-serif;
+	font-size: 20px;
+	margin: 10px;
 	letter-spacing: 3px;
 	line-height: 20px;
 	overflow-wrap: break-word;
@@ -30,6 +85,8 @@
 
 .hint-image {
 	width: 100%;
+	margin-top: 10px;
+	border-radius: 10px;
 }
 
 /* .x {
@@ -42,7 +99,9 @@
 	margin-top: 70px;
 	max-width: 350px;
 	padding: 20px;
-	background-color: rgb(253, 247, 192);
+	background-color: ghostwhite;
+	border: solid 1px black;
+	border-radius: 10px;
 	/* width: 90%; */
 }
 .red-text {
@@ -54,8 +113,12 @@
 	.modal-window {
 		height: auto;
 		padding: 20px;
-		background-color: rgb(253, 247, 192);
+		margin: 10px;
+		/* background-color: rgb(253, 247, 192); */
 		/* width: 90%; */
+	}
+	.hangman-image {
+		height: 150px;
 	}
 }
 
@@ -65,11 +128,11 @@
 	}
 }
 
-@media screen and (max-height: 600px) {
+/* @media screen and (max-height: 600px) {
 	.hangman-image {
 		height: 150px;
 	}
-}
+} */
 @media screen and (max-height: 570px) {
 	h1 {
 		margin-bottom: 5px;

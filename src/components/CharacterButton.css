@@ -1,7 +1,7 @@
 .character-key {
 	display: inline-block;
 	margin: 3px;
-	padding: 7px;
+	padding: 5px;
 	width: 30px;
 	background-color: transparent;
 	border: solid 1px black;
@@ -9,6 +9,11 @@
 	cursor: pointer;
 	/* background-color: blanchedalmond; */
 	/* border: 1px solid blueviolet; */
+
+
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    /* font-weight: bold; */
 }
 
 .character-key:hover {

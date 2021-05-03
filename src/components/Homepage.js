@@ -13,7 +13,7 @@ const Homepage = ({
 }) => {
 	return (
 		<div className="home-container">
-			<p className="home-intro-text">Choose a Category</p>
+			<p className="home-intro-text">Choose your Category</p>
 			<div className="home-button-container">
 				<button className="home-button" onClick={() => getCountryInfo('name')}>
 					Countries
@@ -42,7 +42,7 @@ const Homepage = ({
 				</button>
 
 				<button className="home-button" onClick={() => getSongs()}>
-					Songs
+					Current Chart Music
 				</button>
 
 				<button className="home-button" onClick={() => getDogBreeds()}>

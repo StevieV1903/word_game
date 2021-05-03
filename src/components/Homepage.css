@@ -16,7 +16,7 @@ font-family: 'New Tegomin', serif; */
     cursor: pointer;
 
     background-color: transparent;
-    border: solid 1px black;
+    border: solid 2px black;
     border-radius: 5px;
 
     font-family: 'New Tegomin', serif;
@@ -25,5 +25,9 @@ font-family: 'New Tegomin', serif; */
 }
 
 .home-button:hover {
-    background-color: #bdbdbd;
+    background-color: #d6d6d6;
+}
+
+.home-button:active {
+	transform: translateY(2px);
 }

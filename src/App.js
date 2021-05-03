@@ -242,7 +242,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>Hangman</h1>
+			<h1 className="App-title">Hangman</h1>
 			{bankOfWords.length === 0 && (
 				<Homepage
 					getTvShowNames={getTvShowNames}
