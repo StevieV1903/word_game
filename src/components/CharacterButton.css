@@ -7,18 +7,16 @@
 	border: solid 1px black;
 	border-radius: 5px;
 	cursor: pointer;
-	/* background-color: blanchedalmond; */
-	/* border: 1px solid blueviolet; */
-
-
     font-family: 'Cabin', sans-serif;
     font-size: 14px;
-    /* font-weight: bold; */
 }
 
 .character-key:hover {
-	background-color: #bdbdbd;
-	/* background-color: cornsilk; */
+	background-color: #d6d6d6;
+}
+
+.character-key:active {
+	transform: translateY(2px);
 }
 
 #P,

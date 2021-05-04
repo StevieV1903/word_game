@@ -1,19 +1,19 @@
 
 .game-mode-text {
 	font-family: 'Londrina Solid', cursive;
-	font-size: 20px;
+	font-size: 24px;
 	margin: 0;
 }
 .lives-left-text {
 	font-family: 'Londrina Solid', cursive;
 	font-size: 20px;
-	margin: 0 0 20px 0;
+	margin: 0 0 5px 0;
 }
 
 .wrong-guesses-text {
-	margin: 5px;
+	margin: 0 0 10px 0;
 	font-family: 'Londrina Solid', cursive;
-	font-size: 18px;
+	font-size: 20px;
 }
 .result-text {
 	margin: 5px 0px 15px 0px;
@@ -72,6 +72,12 @@
 	margin: 5px;
 	font-family: 'Londrina Solid', cursive;
 	font-size: 18px;
+}
+.image-hint-text {
+	margin: 10px 0px 0px 5px;
+	font-family: 'Londrina Solid', cursive;
+	font-size: 18px;
+	/* text-align: center; */
 }
 
 .answer-text {

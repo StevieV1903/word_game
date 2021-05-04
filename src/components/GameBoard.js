@@ -192,19 +192,28 @@ const GameBoard = ({
 		}
 	};
 
+	const getImageHintMessage = () => {
+		if( categoryChosen === 'Dog Breeds') {
+			return <p className="image-hint-text">What dog breed is this?</p>
+		}
+		else {
+			return<p className="image-hint-text">What pokemon character is this?</p>
+		}
+	};
+
 	return (
 		<div>
 			<p className="game-mode-text"> {categoryChosen.toUpperCase()}</p>
 			<p className={numberOfLivesLeft <= 3 ? 'lives-left-text red-text' : 'lives-left-text'}>
 				Lives Remaining:  {numberOfLivesLeft}
 			</p>
+			{ numberOfLivesLeft < 7 && <div className="wrong-guesses-text">Wrong Guesses: {displayWrongGuesses()}</div>}
 			<img
 				className="hangman-image"
 				src={require('../images/' + numberOfLivesLeft + '.png').default}
 				alt={numberOfLivesLeft}
 			/>
 			<br />
-			{ numberOfLivesLeft < 7 && <div className="wrong-guesses-text">Wrong Guesses: {displayWrongGuesses()}</div>}
 			<div className="hint-text">{hint && displayHint()}</div>
 			{/* {hint && <button onClick={() => displayHint()}>Hint</button>} */}
 			<div className="x">
@@ -214,7 +223,7 @@ const GameBoard = ({
 				<div>
 					<p className="result-text">Congratulations! You won!</p>
 					<button className="game-button" onClick={() => handleNewGame()}>
-						New Game
+						Play Again
 					</button>
 					<button
 						className="game-button"
@@ -223,7 +232,7 @@ const GameBoard = ({
 							setAllHints([]);
 						}}
 					>
-						Select another Category
+						Select New Category
 					</button>
 				</div>
 			)}
@@ -233,7 +242,7 @@ const GameBoard = ({
 						Game Over! The answer was <b>{wordToGuess.toUpperCase()}!</b>
 					</p>
 					<button className="game-button" onClick={() => handleNewGame()}>
-						New Game
+						Play Again
 					</button>
 					<button
 						className="game-button"
@@ -242,7 +251,7 @@ const GameBoard = ({
 							setAllHints([]);
 						}}
 					>
-						Select another Category
+						Select New Category
 					</button>
 				</div>
 			)}
@@ -254,6 +263,7 @@ const GameBoard = ({
 				<button className="modal-close-button" onClick={() => setModalIsOpen(false)}>
 					Close
 				</button>
+				{getImageHintMessage()}
 				<img className="hint-image" src={hint} alt="hint" />
 			</Modal>
 		</div>
