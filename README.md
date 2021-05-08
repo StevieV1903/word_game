@@ -2,7 +2,7 @@
 
 Based around the hangman game, the application carries out various fetches across multiple API's allowing the user to choose from 10 categories and each game within the category has a hint button with, dependent on which category, either a picture clue or a relevant written clue to help with the puzzle.
 
-This responsive project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+This responsive project was developed by Steve Vance, Chris Fraser and James Fraser and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 The application is hosted on AWS Amplify.
 
