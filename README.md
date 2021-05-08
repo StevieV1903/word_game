@@ -1,6 +1,6 @@
 # [Hangman](https://main.dcr5s95bldpus.amplifyapp.com/)
 
-myJoke Generator is a fully responsive reactjs SPA that makes a fetch to an external api and renders the joke on the click of a button and also requires the user to click a seperate button to reveal the punchline. Also includes some pretty awesome button animations.
+Based around the hangman game, the application carries out various fetches across multiple API's allowing the user to choose from 10 categories and each game within the category has a hint button with, dependent on which category, either a picture clue or a relevant written clue to help with the puzzle.
 
 This responsive project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
