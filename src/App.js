@@ -211,8 +211,8 @@ function App() {
 	const getStarWarsCharacters = () => {
 		const starWarsCharacterNames = [];
 		const starWarsHints = [];
-		const pageNumber = Math.floor(Math.random() * 8) + 1;
-		fetch('https://swapi.dev/api/people/?page=' + pageNumber)
+		const pageNumber = Math.floor(Math.random() * 9) + 1;
+		fetch('https://swapi.dev/api/people/?page=' + pageNumber + '&format=json')
 			.then((res) => res.json())
 			.then((data) => {
 				data.results.forEach((character) => {
@@ -224,7 +224,7 @@ function App() {
 
 				const randomIndex = Math.floor(Math.random() * starWarsCharacterNames.length);
 				planetURL = starWarsHints[randomIndex];
-				planetURL = [ planetURL.slice(0, 4), 's', planetURL.slice(4) ].join('');
+				// planetURL = [ planetURL.slice(0, 4), 's', planetURL.slice(4) ].join('');
 				fetch(planetURL).then((res) => res.json()).then((results) => {
 					let planetName = '';
 					planetName = results.name;
