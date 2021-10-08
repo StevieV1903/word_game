@@ -4,43 +4,54 @@ import GameBoard from './components/GameBoard.js';
 import Homepage from './components/Homepage.js';
 import tmdbApiKey from './ApiKey.js';
 
-function App() {
+const App = () => {
 	const [ bankOfWords, setBankOfWords ] = useState([]);
 	const [ categoryChosen, setCategoryChosen ] = useState('');
 	const [ allHints, setAllHints ] = useState([]);
 	const [ countriesResults, setCountriesResults ] = useState([]);
 
-	const getCountryInfo = (type) => {
-		const countryHints = [];
-		fetch('https://restcountries.eu/rest/v2/all')
-			.then((res) => res.json())
-			.then((results) => {
-				const countryNamesArray = [];
-				results.forEach((result) => {
-					countryNamesArray.push(result[type]);
-					if (type === 'capital') {
-						countryHints.push(result.name);
+
+	const getCountryInfo = ( type ) => {
+		const countryHints = [ ];
+		
+		fetch( 'https://restcountries.com/v3.1/all' )
+			.then(( res ) => res.json())
+			.then(( results ) => {
+				const countryNamesArray = [ ];
+				results.forEach(( result ) => {
+					
+					if ( type === 'capital' ) {
+						
+						if( result.capital ){
+							countryHints.push( result.name.common );
+							countryNamesArray.push( result.capital[0] )
+						} 
+					
 					} else {
-						// if (result.borders[0]) {
-						countryHints.push(result.borders[0]);
-						// } else {
-						// 	countryHints.push('Island');
-						// }
+
+						if ( result.flag ) {
+						countryHints.push( result.flags.svg )
+						countryNamesArray.push( result.name.common )
+
+						} 	
 					}
 				});
-				setBankOfWords(countryNamesArray);
-				setCountriesResults(results);
+
+				setBankOfWords( countryNamesArray );
+				setCountriesResults( results );
 				return results;
 			})
-			.then(() => setAllHints(countryHints))
-			.catch((err) => console.error(err));
-		if (type === 'name') {
-			setCategoryChosen('Country Names');
+
+			.then(() => setAllHints( countryHints ))
+			.catch(( err ) => console.error( err ));
+		if ( type === 'name' ) {
+			setCategoryChosen( 'Country Names' );
 		} else {
-			setCategoryChosen('Capital Cities');
+			setCategoryChosen( 'Capital Cities' );
 		}
-		// setAllHints(countryHints);
 	};
+
+	
 
 	const getTvShowNames = (type) => {
 		let genres = [];

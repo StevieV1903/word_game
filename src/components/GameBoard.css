@@ -115,6 +115,18 @@
 	font-weight: bold;
 }
 
+.flag-image {
+	margin-top: 10px;
+	height: 70px;
+	border: solid 0.5px black;
+	border-radius: 5px;
+}
+
+.flag-text {
+	font-size: 10px;
+}
+
+
 @media screen and (max-width: 600px) {
 	.modal-window {
 		height: auto;
